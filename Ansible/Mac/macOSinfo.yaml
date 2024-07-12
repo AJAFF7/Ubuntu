@@ -1,0 +1,11 @@
+---
+- hosts: Mac # Replace 'nodes' with the name of your target host or group
+  become: yes
+  tasks:
+    - name: Get OS version on macOS
+      shell: sw_vers
+      register: os_version
+
+    - name: Display OS version
+      debug:
+        var: os_version.stdout_lines

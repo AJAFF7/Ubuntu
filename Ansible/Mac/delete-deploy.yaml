@@ -1,0 +1,18 @@
+- hosts: Mac
+  tasks:
+    - name: Delete all Deployments in kind-cluster-0
+      become: yes
+      become_user: "{{ ansible_ssh_user }}"
+      environment:
+        PATH: "/usr/local/bin/:$PATH"
+      shell: |
+        /usr/local/bin/kubectl delete all --all --kubeconfig=/Users/jaff/.kube/config --context=kind-cluster-0
+
+    - name: Apply New Deployments to kind-cluster-1
+      become: yes
+      become_user: "{{ ansible_ssh_user }}"
+      environment:
+        PATH: "/usr/local/bin/:$PATH"
+      shell: |
+        /usr/local/bin/kubectl apply -f /Users/jaff/Desktop/Lens-K8s/e-commerce.yml --kubeconfig=/Users/jaff/.kube/config --context=kind-cluster-1
+

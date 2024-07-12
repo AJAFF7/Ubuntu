@@ -1,0 +1,12 @@
+---
+- hosts: VM-1
+  become: yes
+  tasks:
+    - name: Get OS information
+      shell: lsb_release -a
+      register: os_info
+
+    - name: Display OS information
+      debug:
+        var: os_info.stdout_lines
+

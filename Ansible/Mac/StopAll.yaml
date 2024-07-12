@@ -1,0 +1,16 @@
+- hosts: Mac
+  become: yes
+  tasks:
+    - name: Get the ID of the Semaphore container
+      shell: '/usr/local/bin/docker ps --filter "name=semaphore" --format "{{"{{.ID}}"}}"'
+      register: semaphore_container_id
+      environment:
+        PATH: "/usr/local/bin:/usr/bin:/bin"
+
+    - name: Stop all Docker containers except Semaphore
+      shell: |
+        docker ps -q | grep -v $(echo {{ semaphore_container_id.stdout }} | tr -d '\n') | xargs docker stop
+      environment:
+        PATH: "/usr/local/bin:/usr/bin:/bin"
+      when: semaphore_container_id.stdout != ""
+      ignore_errors: true

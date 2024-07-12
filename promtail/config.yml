@@ -1,0 +1,68 @@
+server:
+  http_listen_port: 9080
+  grpc_listen_port: 0
+
+positions:
+  filename: /var/lib/promtail/positions.yaml
+
+clients:
+  - url: http://localhost:3100/loki/api/v1/push
+
+scrape_configs:
+  - job_name: system
+    static_configs:
+      - targets:
+          - localhost
+        labels:
+          job: system
+          __path__: /var/log/*log
+
+  - job_name: Caches-Cleaner
+    static_configs:
+      - targets:
+          - localhost
+        labels:
+          job: Caches-Cleaner-logs
+          __path__: /var/log/cleaner/Caches-Cleaner/*.log
+
+  - job_name: Processes
+    static_configs:
+      - targets:
+          - localhost
+        labels:
+          job: Processes-logs
+          __path__: /var/log/cleaner/Processes/*.log
+
+  - job_name: Process-Memory-Usage
+    static_configs:
+      - targets:
+          - localhost
+        labels:
+          job: Process-Memory-Usage-logs
+          __path__: /var/log/cleaner/Process_Memory_Usage/*.log
+
+  - job_name: Systems-Cleaner
+    static_configs:
+      - targets:
+          - localhost
+        labels:
+          job: Systems-Cleaner-logs
+          __path__: /var/log/cleaner/Systems-Cleaner/*.log
+
+  - job_name: Update-Repository
+    static_configs:
+      - targets:
+          - localhost
+        labels:
+          job: Update-Repository-logs
+          __path__: /var/log/cleaner/Update-Repository/*.log
+
+  - job_name: Loki
+    static_configs:
+      - targets:
+          - localhost
+        labels:
+          job: Loki-logs
+          __path__: /etc/loki/logs/*.log
+
+  

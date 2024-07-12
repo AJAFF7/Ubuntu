@@ -1,0 +1,10 @@
+- hosts: VM-1 # Replace with the IP address or hostname of your Ubuntu host
+  become: yes
+  tasks:
+    - name: Get Disk Usage
+      shell: df -h
+      register: disk_usage
+
+    - name: Display Disk Usage
+      debug:
+        var: disk_usage.stdout_lines

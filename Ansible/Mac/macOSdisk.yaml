@@ -1,0 +1,7 @@
+---
+- hosts: Mac # Replace 'nodes' with the name of your target host or group
+  become: yes
+  tasks:
+    - name: Get Disk Usage on macOS
+      shell: df -h
+      register: disk_usage

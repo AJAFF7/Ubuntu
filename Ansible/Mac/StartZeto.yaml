@@ -1,0 +1,7 @@
+- hosts: Mac
+  tasks:
+    - name: Start Zeto
+      become: no # Disable privilege escalation for this task
+      environment:
+        PATH: "/usr/local/bin:/usr/bin:/bin"
+      command: "docker start zeto"

@@ -1,0 +1,10 @@
+- hosts: VM-1
+  become: yes
+  tasks:
+    - name: Get Memory Usage
+      shell: free -h
+      register: memory_usage
+
+    - name: Display Memory Usage
+      debug:
+        var: memory_usage.stdout_lines

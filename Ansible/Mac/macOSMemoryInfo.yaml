@@ -1,0 +1,11 @@
+- hosts: Mac
+  gather_facts: no # We don't need to gather facts for macOS
+  become: yes
+  tasks:
+    - name: Get Memory Usage
+      shell: vm_stat
+      register: memory_usage
+
+    - name: Display Memory Usage
+      debug:
+        var: memory_usage.stdout_lines

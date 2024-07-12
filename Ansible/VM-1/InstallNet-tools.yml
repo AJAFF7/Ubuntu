@@ -1,0 +1,15 @@
+---
+- name: Install ifconfig on Ubuntu
+  hosts: VM-1
+  become: yes
+  gather_facts: yes
+
+  tasks:
+    - name: Update apt cache
+      apt:
+        update_cache: yes
+
+    - name: Install ifconfig
+      apt:
+        name: net-tools
+        state: present

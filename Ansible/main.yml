@@ -1,0 +1,9 @@
+---
+- name: Main Playbook
+  hosts: all
+  tasks:
+    - name: Include tasks from VM-1
+      include: VM-1/LinuxOSInfo.yaml
+
+    - name: Include tasks from Mac
+      include: Mac/macOSdisk.yaml, macOSinfo.yaml, macOSMemoryInfo.yaml

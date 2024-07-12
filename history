@@ -1,0 +1,302 @@
+clear
+    2  git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions\n
+    3  nano ~/.zshrc\n
+    4  source ~/.zshrc\n
+    5  pwd
+    6  nano ~/.zshrc\n
+    7  c
+    8  source ~/.zshrc\n
+    9  c
+   10  pwd
+   11  ls
+   12  df -h
+   13  c
+   14  free -h
+   15  c
+   16  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.4/install.sh | bash\n
+   17  nano ~/.zshrc\n
+   18  source ~/.zshrc\n
+   19  c
+   20  pwd
+   21  ls
+   22  c
+   23  ls
+   24  c
+   25  sudo apt update\nsudo apt upgrade -y\n
+   26  c
+   27  chsh -s $(which zsh)\n
+   28  source ~/.zshrc\n
+   29  chsh -s $(which zsh)\n
+   30  c
+   31  echo $SHELL\n
+   32  source ~/.zshrc\n
+   33  c
+   34  pwd
+   35  c
+   36  groups
+   37  groups dev
+   38  c
+   39  wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -\n
+   40  sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'\n
+   41  sudo apt update\nsudo apt install jenkins\n
+   42  sudo systemctl start jenkins
+   43  c
+   44  sudo systemctl status jenkins\n
+   45  c
+   46  sudo journalctl -xe\n
+   47  c
+   48  sudo systemctl restart jenkins\n
+   49  sudo apt install openjdk-11-jdk\n
+   50  nano ~/.zshrc\n
+   51  fm
+   52  c
+   53  m
+   54  f
+   55  free- -h
+   56  free -h
+   57  c
+   58  source ~/.zshrc\n
+   59  java --version
+   60  sudo update-alternatives --config java\n
+   61  java -version\n
+   62  c
+   63  sudo update-alternatives --config java\n
+   64  sudo update-alternatives --set java /usr/lib/jvm/java-11-openjdk-arm64/bin/java\n
+   65  vjava -version\n
+   66  java -version\n
+   67  c
+   68  nano ~/.zshrc\n
+   69  c
+   70  source ~/.zshrc\n
+   71  java -version\n
+   72  sudo update-alternatives --remove-all java\n
+   73  v
+   74  c
+   75  sudo update-alternatives --install /usr/bin/java java /usr/lib/jvm/java-11-openjdk-arm64/bin/java 1\n
+   76  sudo update-alternatives --config java\n
+   77  java -version\n
+   78  c
+   79  nano ~/.zshrc\n
+   80  source ~/.zshrc\n
+   81  nano ~/.zshrc\n
+   82  source ~/.zshrc\n
+   83  java -version\n
+   84  sudo systemctl restart jenkins\n
+   85  sudo systemctl status jenkins\n
+   86  c
+   87  sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+   88  nano ~/.zshrc\n
+   89  na
+   90  nano ~/.zshrc\n
+   91  source ~/.zshrc\n
+   92  m
+   93  c
+   94  df
+   95  c
+   96  nano ~/.zshrc\n
+   97  source ~/.zshrc\n
+   98  js
+   99  c
+  100  cd /usr/lib/systemd/system
+  101  ls
+  102  sudo nano jenkins.services
+  103  sudo nano jenkins.service
+  104  jr
+  105  sudo systemctl daemon-reload
+  106  c
+  107  js
+  108  c
+  109  sudo nano /etc/defoult/jenkins
+  110  j0
+  111  c
+  112  sudo nano /etc/default/jenkins\n
+  113  jr
+  114  jo
+  115  j0
+  116  sudo apt remove openjdk-11-jdk\n
+  117  sudo apt autoremove\n
+  118  c
+  119  nano ~/.zshrc\n
+  120  source ~/.zshrc\n
+  121  sudo update-alternatives --config java\n
+  122  c
+  123  sudo update-alternatives --config java\n
+  124  java -version\n
+  125  c
+  126  j1
+  127  c
+  128  which java
+  129  jr
+  130  c
+  131  sudo systemctl stop jenkins\nsudo rm -rf /var/cache/jenkins/war\nsudo systemctl start jenkins\n
+  132  sudo nano /etc/default/jenkins
+  133  sudo gedit /etc/default/jenkins
+  134  j0
+  135  c
+  136  sudo apt remove --purge firefox\n
+  137  rm -rf ~/.mozilla/firefox\n
+  138  sudo rm -rf /etc/firefox\n
+  139  which firefox\nps aux | grep firefox\n
+  140  c
+  141  sudo snap remove firefox\n
+  142  sudo apt autoremove\n
+  143  sudo apt autocleant
+  144  sudo apt autoclean
+  145  c
+  146  m
+  147  c
+  148  df
+  149  c
+  150  cd
+  151  cd /etc/default
+  152  ls
+  153  cd 
+  154  cd /etc/netplan
+  155  ls
+  156  sudo nano 01-network-manager-all.yaml 
+  157  source ~/.zshrc\n
+  158  sudo nrtplan apply
+  159  sudo netplan apply
+  160  c
+  161  sudo reboot
+  162  ip a
+  163  sudo systemctl restart NetworkManager
+  164  c
+  165  sudo apt install net-tools\n
+  166  ifconfig --version\n
+  167  ifconfig\n
+  168  c
+  169  sudo nano /etc/netplan/01-netcfg.yaml\n
+  170  cd /etc/netplan
+  171  ls
+  172  sudo nano 01-network-manager-all.yaml
+  173  sudo netplan apply\n
+  174  ip a     # Check IP addresses\nip r     # Check routing table\nsystemd-resolve --status     # Check DNS settings\n
+  175  c
+  176  cat /etc/resolv.conf\n
+  177  c
+  178  source ~/.zshrc\n
+  179  ifconfig\n
+  180  sudo nano 01-network-manager-all.yaml
+  181  sudo apt update\nsudo apt install arp-scan\n
+  182  c
+  183  sudo arp-scan --localnet\n
+  184  sudo netplan apply\n
+  185  c
+  186  ls
+  187  sudo chmod 600 /etc/netplan/01-network-manager-all.yaml\n
+  188  sudo nano 01-network-manager-all.yaml
+  189  sudo netplan apply\n
+  190  ifconfig\n
+  191  c
+  192  sudo netplan apply\n
+  193  c
+  194  ifconfig\n
+  195  c
+  196  sudo nano 01-network-manager-all.yaml
+  197  ifconfig\n
+  198  ip route
+  199  sudo netplan apply\n
+  200  ifconfig\n
+  201  c
+  202  js
+  203  c
+  204  m
+  205  c
+  206  which java
+  207  c
+  208  sudo systemctl start ssh\n
+  209  c
+  210  sudo apt update\nsudo apt install openssh-server\n
+  211  c
+  212  sudo systemctl start sshd\n
+  213  sudo systemctl enable sshd\n
+  214  sudo ufw allow ssh\n
+  215  sudo ufw enable
+  216  sudo ufw status
+  217  c
+  218  sudo systemctl status sshd\n
+  219  c
+  220  jr
+  221  m
+  222  c
+  223  m
+  224  c
+  225  df
+  226  sudo apt install stacer
+  227  c
+  228  m
+  229  c
+  230  df
+  231  c
+  232  pwd
+  233  ls
+  234  c
+  235  m
+  236  df
+  237  c
+  238  pwd
+  239  ls
+  240  c
+  241  m
+  242  c
+  243  df
+  244  c
+  245  m
+  246  c
+  247  df
+  248  c
+  249  sudo apt update
+  250  c
+  251  sudo kill -9 1493\n
+  252  sudo apt update
+  253  sudo systemctl stop packagekit\nsudo systemctl disable packagekit\n
+  254  sudo systemctl enable packagekit\nsudo systemctl start packagekit\n
+  255  c
+  256  sudo systemctl stop packagekit\n
+  257  sudo apt update\n
+  258  c
+  259  cd /var/cache
+  260  ls
+  261  cd ..
+  262  cd crash
+  263  ls
+  264  cd ..
+  265  sudo rm -rf crash*
+  266  cd crash
+  267  ls
+  268  c
+  269  cd /etc
+  270  ls
+  271  c
+  272  cd 
+  273  cd /usr
+  274  ls
+  275  cd local
+  276  ls
+  277  cd bin
+  278  ls
+  279  nano ~/.zshrc\n
+  280  gedit ~/.zshrc\n
+  281  cd
+  282  cd Downloads
+  283  ls
+  284  sudo cp ~/.zshrc /Downloads 
+  285  c
+  286  ls
+  287  touch zshrc
+  288  ls
+  289  gedit ~/.zshrc\n
+  290  nano zshrc
+  291  open ,
+  292  oopepn .
+  293  open .
+  294  history
+  295  which history
+  296  sudo gedit omz_history
+  297  sudo gedit ~/omz_history
+  298  c
+  299  sudo cp hostory /Downloads
+  300  sudo cp history /Downloads
+➜  ~ 
+
