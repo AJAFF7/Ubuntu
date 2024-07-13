@@ -30,7 +30,7 @@
 
 */30 * * * * sudo sh -c 'echo 1 > /proc/sys/vm/drop_caches && echo "$(date): \e[37mCache level\e[0m \e[31m2\e[0m \e[32mdropped successfully\e[0m" >> /var/log/cleaner/Caches-Cleaner/drop_caches_1.log'
 */30 * * * * sudo sh -c 'echo 2 > /proc/sys/vm/drop_caches && echo "$(date): \e[37mCache level\e[0m \e[31m1\e[0m \e[32mdropped successfully\e[0m" >> /var/log/cleaner/Caches-Cleaner/drop_caches_1.log'
-*/30 * * * sudo sh -c 'echo 3 > /proc/sys/vm/drop_caches && echo "$(date): \e[37mCache level\e[0m \e[31m3\e[0m \e[32mdropped successfully\e[0m" >> /var/log/cleaner/Caches-Cleaner/drop_caches_1.log'
+*/30 * * * * sudo sh -c 'echo 3 > /proc/sys/vm/drop_caches && echo "$(date): \e[37mCache level\e[0m \e[31m3\e[0m \e[32mdropped successfully\e[0m" >> /var/log/cleaner/Caches-Cleaner/drop_caches_1.log'
 
 */20 * * * * sudo sh -c 'sync; echo 1 > /proc/sys/vm/drop_caches && echo "$(date): \e[37mCache level\e[0m \e[31m1\e[0m \e[32mdropped with sync successfully\e[0m" >> /var/log/cleaner/Caches-Cleaner/drop_caches_2.log'
 */20 * * * * sudo sh -c 'sync; echo 2 > /proc/sys/vm/drop_caches && echo "$(date): \e[37mCache level\e[0m \e[31m3\e[0m \e[32mdropped with sync successfully\e[0m" >> /var/log/cleaner/Caches-Cleaner/drop_caches_2.log'
